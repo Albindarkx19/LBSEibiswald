@@ -20,11 +20,7 @@ Technologien im Einsatz:
  
 ```php
  
-//some source code configuration
-$config = [
-    'setting1' => 'value1',
-    'setting2' => 'value2',
-];
+abc
  
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
