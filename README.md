@@ -40,4 +40,4 @@ Diese Software ist unter der MIT-Lizenz lizenziert.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [java.com]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 [java-url]: https://www.java.com/de/
-[product-screenshot]: images/main.png
+[product-screenshot]: C:\Users\Albin.prushi\Pictures\Screenshots\Screenshot.png
