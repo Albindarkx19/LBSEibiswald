@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 # HelloWorld
-Author: Albin Peter <br>
+Author: Albin <br>
 LBS Eibiswald | 2aAPC
 
 Dies ist eine einfache Demo-Anwendung, die dazu dient, grundlegende Konzepte der Softwareentwicklung zu veranschaulichen. Sie bietet Beispiele für Best Practices in der Programmierung, die leicht erweitert und angepasst werden können. Das Ziel dieser Anwendung ist es, sowohl neuen als auch erfahrenen Entwicklern eine einfache Grundlage für ihre eigenen Projekte zu bieten.
@@ -27,7 +27,7 @@ abc
  
 ## Screenshots
  
-[![Screen Shot][product-screenshot]](https://example.com)
+[![Screen Shot][product-screenshot]](Screenshot.png)
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
@@ -40,4 +40,4 @@ Diese Software ist unter der MIT-Lizenz lizenziert.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [java.com]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 [java-url]: https://www.java.com/de/
-[product-screenshot]: C:\Users\Albin.prushi\Pictures\Screenshots\Screenshot.png
+[product-screenshot]: Screenshot.png
