@@ -1,3 +1,12 @@
+/*
+ * Project: Employee
+ * Klasse: 2aAPC / 2024
+ * Author:  Albin Prushi
+ * Last Change:
+ *    by:   APR
+ *    date: 1.10.2024
+ * Copyright (c): LBS Eibiswald, 2024
+ */
 package ITL12_2aAPC;
 
 import java.util.ArrayList;
