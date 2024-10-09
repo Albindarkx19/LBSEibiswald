@@ -41,13 +41,13 @@ Das Spiel ist einfach aufgebaut: Der Benutzer muss ein Wort erraten, indem er Bu
 Hier sind einige Screenshots des Spiels, die das Hauptfenster und das Gameplay zeigen:
 
 ### Hauptfenster (MainWindow)
-![MainWindow](screenshots/MainWindow.png)
+![MainWindow](MainWindow.png)
 
 ### JavaFrage1
-![JavaFrage1](screenshots/JavaFrage1.png)
+![JavaFrage1](JavaFrage1.png)
 
 ### JavaFrage2
-![JavaFrage2](screenshots/JavaFrage2.png)
+![JavaFrage2](JavaFrage2.png)
 
 ## Lizenz
 Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE`.
