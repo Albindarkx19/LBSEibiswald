@@ -51,3 +51,8 @@ Hier sind einige Screenshots des Spiels, die das Hauptfenster und das Gameplay z
 
 ## Lizenz
 Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE`.
+
+
+[JavaFrage1]: JavaFrage1.png
+[JavaFrage2]: JavaFrage2.png
+[MainWindow]: MainWindow.png
