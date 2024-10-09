@@ -9,6 +9,6 @@ public class BruchrechnerUI {
     private JTextField Zähler2;
     private JTextField Nenner2;
     private JTextField Ergebnis;
-    private JTextField Bruchstrich1;
     private JTextField Bruchstrich2;
+    private JPanel guiPanel;
 }

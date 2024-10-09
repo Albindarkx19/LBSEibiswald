@@ -11,6 +11,7 @@
 package Bruchrechner;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,27 +30,28 @@ public class Bruchrechner {
     private int resultNenner;
 
     public Bruchrechner() {
-        // Manually initializing the components
-        Zähler1 = new JTextField();
-        Nenner1 = new JTextField();
-        Zähler2 = new JTextField();
-        Nenner2 = new JTextField();
+        // Manually initializing the components with larger sizes
+        Zähler1 = new JTextField(10);
+        Nenner1 = new JTextField(10);
+        Zähler2 = new JTextField(10);
+        Nenner2 = new JTextField(10);
         operatorComboBox = new JComboBox<>();
-        Ergebnis = new JTextField();
+        Ergebnis = new JTextField(20);
         calculateButton = new JButton("Berechnen");
         simplifyButton = new JButton("Kürzen");
         mainPanel = new JPanel();
 
-        // Set up the layout and add components
-        mainPanel.setLayout(new java.awt.GridLayout(4, 3));
+        // Set up the layout and add components with increased layout dimensions
+        mainPanel.setLayout(new GridLayout(5, 3, 10, 10));  // Adjusted layout with spacing
+        mainPanel.setPreferredSize(new Dimension(400, 200)); // Set a larger preferred size
         mainPanel.add(Zähler1);
         mainPanel.add(operatorComboBox);
         mainPanel.add(Zähler2);
-        mainPanel.add(new JLabel("-----------------------"));
-        mainPanel.add(new JLabel("-----------------------"));
-        mainPanel.add(new JLabel("-----------------------"));
+        mainPanel.add(new JLabel("________________________"));
+        mainPanel.add(new JLabel(" "));
+        mainPanel.add(new JLabel("________________________"));
         mainPanel.add(Nenner1);
-        mainPanel.add(new JLabel("-----------------------"));
+        mainPanel.add(new JLabel(" "));
         mainPanel.add(Nenner2);
         mainPanel.add(calculateButton);
         mainPanel.add(Ergebnis);
@@ -138,5 +140,6 @@ public class Bruchrechner {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setSize(500, 200);  // Set a larger frame size
     }
 }
