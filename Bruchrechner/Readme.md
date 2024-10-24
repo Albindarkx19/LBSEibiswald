@@ -1,58 +1,56 @@
-# Hanged Man Spiel - Java GUI Version
+Bruchrechner - Java GUI Version
 
-Dies ist eine Java-Implementierung des klassischen Hanged Man Spiels mit einer grafischen Benutzeroberfläche (GUI), die mit Swing erstellt wurde. Das Projekt verwendet verschiedene Bilder, Timer und sogar ein Easter Egg, um die Spielerfahrung unterhaltsamer zu gestalten.
+Dies ist eine Java-Implementierung eines Bruchrechners mit einer grafischen Benutzeroberfläche (GUI), die mit Swing erstellt wurde. Das Projekt bietet eine einfache Möglichkeit zur Berechnung von Brüchen und deren Vereinfachung.
 
-## Funktionsbeschreibung
+Funktionsbeschreibung
 
-Das Spiel ist einfach aufgebaut: Der Benutzer muss ein Wort erraten, indem er Buchstaben nacheinander eingibt. Der Spieler hat eine begrenzte Anzahl von Fehlversuchen, bevor das Spiel endet. Zusätzlich wird ein Timer verwendet, um eine maximale Zeit für die Eingabe festzulegen.
+Der Bruchrechner ermöglicht es, grundlegende Operationen mit zwei Brüchen durchzuführen. Der Benutzer kann zwei Brüche eingeben und verschiedene arithmetische Operationen (Addition, Subtraktion, Multiplikation, Division) durchführen.
 
-### Hauptmerkmale
-- **Eingabe von Buchstaben oder Wörtern**: Der Benutzer kann entweder einen einzelnen Buchstaben oder das gesamte Wort eingeben, um das Rätsel zu lösen.
-- **Bilder**: Bei jedem Fehlversuch wird ein neues Bild angezeigt, das den Fortschritt des gehängten Mannes darstellt. Bei 9 Fehlversuchen endet das Spiel mit einem "Game Over".
-- **Timer**: Ein Timer läuft ab, um die Eingabezeit zu begrenzen. Wenn der Timer abgelaufen ist, werden nacheinander Timer-spezifische Bilder angezeigt, bevor das Spiel endet.
-- **Easter Egg**: Wenn der Benutzer das Wort "fallen" eingibt, wird ein Easter Egg aktiviert, bei dem spezielle Bilder angezeigt werden und der Spieler automatisch gewinnt.
+Hauptmerkmale
 
-## Spielablauf
-1. Zu Beginn des Spiels wählt der Benutzer die maximale Anzahl der Fehlversuche sowie die verfügbare Zeit in Sekunden aus.
-2. Der Benutzer gibt Buchstaben oder das gesamte Wort über ein Textfeld ein.
-3. Bei einer korrekten Eingabe wird der Fortschritt des zu erratenden Wortes aktualisiert. Bei einer falschen Eingabe erhöht sich die Anzahl der Fehlversuche und ein neues Bild wird angezeigt.
-4. Das Spiel endet, wenn entweder das Wort erraten wurde, die Fehlversuche aufgebraucht sind oder der Timer abgelaufen ist.
-5. Im Falle des Easter Eggs werden spezielle Bilder angezeigt und der Spieler gewinnt automatisch.
+Eingabe von Brüchen: Der Benutzer gibt den Zähler und Nenner für zwei Brüche ein.
 
-## Voraussetzungen
-- **Java Development Kit (JDK)**: Version 8 oder höher.
-- **IDE**: Empfohlen wird IntelliJ IDEA oder eine ähnliche Entwicklungsumgebung, die GUI-Formulare (.form-Dateien) unterstützt.
+Arithmetische Operationen: Die verfügbaren Operationen sind Addition, Subtraktion, Multiplikation und Division.
 
-## Installation & Ausführen
-1. Klone dieses Repository auf deinen lokalen Rechner.
-2. Öffne das Projekt in deiner bevorzugten IDE.
-3. Stelle sicher, dass alle benötigten Bilder (HangedMan1.png bis HangedMan9.png, HangedManTimer1.png bis HangedManTimer3.png, HangedManEasterEGG1.png, HangedManEasterEGG2.png, und EndTheme.jpg) im Verzeichnis `images` vorhanden sind.
-4. Führe die `HangedMan.java`-Datei aus, um das Spiel zu starten.
+Ergebnisdarstellung: Das Ergebnis der Berechnung wird als Bruch angezeigt.
 
-## Steuerung
-- **Textfeld**: Geben Sie einzelne Buchstaben ein, um das Wort zu erraten, oder das Wort "fallen", um das Easter Egg zu aktivieren.
-- **Timer**: Die verbleibende Zeit wird auf der Benutzeroberfläche angezeigt. Sobald die Zeit abgelaufen ist, werden automatisch Timer-Bilder angezeigt.
+Brüche kürzen: Eine Funktion zur Kürzung vereinfacht das Ergebnis auf den kleinsten gemeinsamen Teiler (ggT).
 
-## Besonderheiten
-- **Easter Egg**: Bei Eingabe des Wortes "fallen" werden die Bilder `HangedManEasterEGG1.png` und `HangedManEasterEGG2.png` angezeigt, und der Spieler gewinnt automatisch.
-- **Verlauf und Statistik**: Die Anzahl der gewonnenen und verlorenen Spiele wird während der gesamten Spielsession verfolgt.
+Bedienung
 
-## Screenshots
-Hier sind einige Screenshots des Spiels, die das Hauptfenster und das Gameplay zeigen:
+Zu Beginn gibt der Benutzer die Zähler und Nenner der beiden Brüche ein.
 
-### Hauptfenster (MainWindow)
-![MainWindow](Mainwindow.png)
+Der Benutzer wählt eine der Operationen (+, -, *, /) aus.
 
-### JavaFrage1
-![JavaFrage1](JavaFrage1.png)
+Bei korrekter Eingabe wird das Ergebnis der gewählten Operation angezeigt.
 
-### JavaFrage2
-![JavaFrage2](JavaFrage2.png)
+Der Benutzer kann auf "Kürzen" klicken, um das Ergebnis zu vereinfachen.
 
-## Lizenz
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE`.
+Voraussetzungen
 
+Java Development Kit (JDK): Version 8 oder höher.
 
-[JavaFrage1]: JavaFrage1.png
-[JavaFrage2]: JavaFrage2.png
-[MainWindow]: Mainwindow.png
+IDE: Empfohlen wird IntelliJ IDEA oder eine ähnliche Entwicklungsumgebung.
+
+Installation & Ausführen
+
+Klone dieses Repository auf deinen lokalen Rechner.
+
+Öffne das Projekt in deiner bevorzugten IDE.
+
+Führe die Bruchrechner.java-Datei aus, um das Programm zu starten.
+
+Beispiel
+
+Wenn der Benutzer die folgenden Brüche eingibt:
+
+Bruch 1: Zähler = 1, Nenner = 2
+
+Bruch 2: Zähler = 3, Nenner = 4
+
+Und die Addition auswählt, lautet das Ergebnis: 5/4. Dieses kann anschließend durch die Kürzungsfunktion weiter vereinfacht werden.
+
+Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei LICENSE.
+
