@@ -32,7 +32,7 @@ public class Table {
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
 
-        // Tabellenmodell und Tabelle erstellen
+        // Tabellenmodell und Tabelle erstel
         DefaultTableModel tableModel = new DefaultTableModel();
         JTable table = new JTable(tableModel);
 
