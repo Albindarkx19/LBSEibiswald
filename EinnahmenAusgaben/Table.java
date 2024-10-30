@@ -25,7 +25,7 @@ public class Table {
     private static JLabel totalEntriesLabel = new JLabel("Anzahl der Einträge: 0");
     private static JLabel currentDateLabel = new JLabel("Heutiges Datum: " + LocalDate.now());
 
-    public static void main(String[] args) {
+    public static void main(String[] argsStrings) {
         // Frame erstellen
         JFrame frame = new JFrame("Einnahmen und Ausgaben");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
