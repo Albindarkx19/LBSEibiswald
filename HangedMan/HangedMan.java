@@ -16,7 +16,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class HangedMan {
+public class HangedMan
+{
     private String wordToGuess;
     private StringBuilder currentGuess;
     private ArrayList<Character> guessedLetters;
@@ -40,7 +41,8 @@ public class HangedMan {
     private String[] timerImages = {"images/HangedManTimer1.png", "images/HangedManTimer2.png", "images/HangedManTimer3.png"};
     private String[] easterEggImages = {"images/HangedManEasterEGG1.png", "images/HangedManEasterEGG2.png"};
 
-    public HangedMan(String word, int maxAttempts, int timeLimit) {
+    public HangedMan(String word, int maxAttempts, int timeLimit)
+    {
         this.wordToGuess = word.toLowerCase();
         this.currentGuess = new StringBuilder("_".repeat(word.length()));
         this.guessedLetters = new ArrayList<>();
@@ -51,7 +53,8 @@ public class HangedMan {
         this.gamesLost = 0;
 
         images = new String[9];
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++)
+        {
             images[i] = "images/HangedMan" + (i + 1) + ".png";
         }
 
@@ -60,13 +63,17 @@ public class HangedMan {
         updateImage();
     }
 
-    private void startGameTimer() {
-        gameTimer = new Timer(1000, new ActionListener() {
+    private void startGameTimer()
+    {
+        gameTimer = new Timer(1000, new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 timeRemaining--;
                 timerLabel.setText("Verbleibende Zeit: " + timeRemaining + " Sekunden");
-                if (timeRemaining <= 0) {
+                if (timeRemaining <= 0)
+                {
                     gameTimer.stop();
                     JOptionPane.showMessageDialog(null, "Zeit abgelaufen!");
                     startTimerCountdown();
@@ -76,17 +83,23 @@ public class HangedMan {
         gameTimer.start();
     }
 
-    private void startTimerCountdown() {
-        timerCountdown = new Timer(8000, new ActionListener() {
+    private void startTimerCountdown()
+    {
+        timerCountdown = new Timer(3000, new ActionListener()
+        {
             int timerImageIndex = 0;
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                if (timerImageIndex < timerImages.length) {
+            public void actionPerformed(ActionEvent e)
+            {
+                if (timerImageIndex < timerImages.length)
+                {
                     ImageIcon timerIcon = new ImageIcon(timerImages[timerImageIndex]);
                     imageLabel.setIcon(timerIcon);
                     timerImageIndex++;
-                } else {
+                }
+                else
+                {
                     timerCountdown.stop();
                     ImageIcon endIcon = new ImageIcon(endThemeImage);
                     imageLabel.setIcon(endIcon);
@@ -97,17 +110,23 @@ public class HangedMan {
         timerCountdown.start();
     }
 
-    private void startEasterEgg() {
-        easterEggTimer = new Timer(4000, new ActionListener() {
+    private void startEasterEgg()
+    {
+        easterEggTimer = new Timer(4000, new ActionListener()
+        {
             int easterEggImageIndex = 0;
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                if (easterEggImageIndex < easterEggImages.length) {
+            public void actionPerformed(ActionEvent e)
+            {
+                if (easterEggImageIndex < easterEggImages.length)
+                {
                     ImageIcon easterEggIcon = new ImageIcon(easterEggImages[easterEggImageIndex]);
                     imageLabel.setIcon(easterEggIcon);
                     easterEggImageIndex++;
-                } else {
+                }
+                else
+                {
                     easterEggTimer.stop();
                     JOptionPane.showMessageDialog(null, "Easter Egg! Du hast automatisch gewonnen!");
                     gamesWon++;
@@ -118,17 +137,21 @@ public class HangedMan {
         easterEggTimer.start();
     }
 
-    public boolean makeGuess(String input) {
+    public boolean makeGuess(String input)
+    {
         input = input.toLowerCase();
 
-        if (input.equals("fallen")) {
+        if (input.equals("fallen"))
+        {
             startEasterEgg();
             return true;
         }
 
-        if (input.length() == 1) {
+        if (input.length() == 1)
+        {
             char letter = input.charAt(0);
-            if (guessedLetters.contains(letter)) {
+            if (guessedLetters.contains(letter))
+            {
                 JOptionPane.showMessageDialog(null, "Du hast diesen Buchstaben schon geraten!");
                 return false;
             }
@@ -136,53 +159,68 @@ public class HangedMan {
             guessedLetters.add(letter);
             updateGuessedLetters();
 
-            if (wordToGuess.contains(String.valueOf(letter))) {
-                for (int i = 0; i < wordToGuess.length(); i++) {
-                    if (wordToGuess.charAt(i) == letter) {
+            if (wordToGuess.contains(String.valueOf(letter)))
+            {
+                for (int i = 0; i < wordToGuess.length(); i++)
+                {
+                    if (wordToGuess.charAt(i) == letter)
+                    {
                         currentGuess.setCharAt(i, letter);
                     }
                 }
                 updateDisplay();
                 return true;
-            } else {
+            }
+            else
+            {
                 wrongGuesses++;
                 updateImage();
                 updateDisplay();
                 return false;
             }
-        } else {
+        }
+        else
+        {
             JOptionPane.showMessageDialog(null, "Bitte geben Sie nur einen Buchstaben oder das Easter-Egg-Wort ein.");
             return false;
         }
     }
 
-    public boolean isGameOver() {
+    public boolean isGameOver()
+    {
         return wrongGuesses >= maxAttempts || currentGuess.toString().equals(wordToGuess);
     }
 
-    public void updateDisplay() {
+    public void updateDisplay()
+    {
         wordDisplayField.setText(currentGuess.toString().replace("", " ").trim());
         wrongGuessesLabel.setText("Falsche Versuche: " + wrongGuesses + "/" + maxAttempts);
     }
 
-    public void updateGuessedLetters() {
+    public void updateGuessedLetters()
+    {
         guessedLettersLabel.setText("Geratene Buchstaben: " + guessedLetters.toString());
     }
 
-    public void updateImage() {
-        if (wrongGuesses < 8) {
+    public void updateImage()
+    {
+        if (wrongGuesses < 8)
+        {
             ImageIcon icon = new ImageIcon(images[wrongGuesses]);
             imageLabel.setIcon(icon);
-        } else if (wrongGuesses == 8) {
+        }
+        else if (wrongGuesses == 8)
+        {
             ImageIcon icon = new ImageIcon(images[8]);
             imageLabel.setIcon(icon);
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         JFrame frame = new JFrame("Hanged Man");
 
-        String[] wordList = { "apfel", "birne", "ananas", "banane", "hangman", "weihnachten","galgenmännchen","enzyklopädie" };
+        String[] wordList = { "apfel", "birne", "ananas", "banane", "hangman", "weihnachten", "galgenmännchen", "enzyklopädie" };
         Random random = new Random();
         String selectedWord = wordList[random.nextInt(wordList.length)];
 
@@ -195,23 +233,32 @@ public class HangedMan {
         frame.setContentPane(game.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setSize(600, 500);
+        // Set the frame to maximize the window, keeping the taskbar and title bar
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Maximized state
         frame.setVisible(true);
 
-        game.letterInputField.addActionListener(new ActionListener() {
+        game.letterInputField.addActionListener(new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 String input = game.letterInputField.getText();
-                if (!input.isEmpty()) {
-                    if (!game.makeGuess(input)) {
+                if (!input.isEmpty())
+                {
+                    if (!game.makeGuess(input))
+                    {
                         JOptionPane.showMessageDialog(null, "Falscher Versuch!");
                     }
 
-                    if (game.isGameOver()) {
-                        if (game.wrongGuesses >= game.maxAttempts) {
+                    if (game.isGameOver())
+                    {
+                        if (game.wrongGuesses >= game.maxAttempts)
+                        {
                             JOptionPane.showMessageDialog(null, "Game Over! Das Wort war: " + game.wordToGuess);
                             game.gamesLost++;
-                        } else {
+                        }
+                        else
+                        {
                             JOptionPane.showMessageDialog(null, "Du hast das Wort erraten: " + game.getCurrentGuess());
                             game.gamesWon++;
                         }
@@ -228,7 +275,8 @@ public class HangedMan {
         System.out.println("Gewonnen: " + gamesWon + " | Verloren: " + gamesLost);
     }
 
-    public void resetGame(String newWord, int maxAttempts) {
+    public void resetGame(String newWord, int maxAttempts)
+    {
         wordToGuess = newWord;
         currentGuess = new StringBuilder("_".repeat(wordToGuess.length()));
         guessedLetters.clear();
