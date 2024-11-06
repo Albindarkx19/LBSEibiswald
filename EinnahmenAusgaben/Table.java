@@ -345,37 +345,33 @@ public class Table {
         filterDialog.add(applyButton);
 
         // Funktionalität für den Anwenden-Button
-        applyButton.addActionListener(new ActionListener()
-        {
+        applyButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 List<RowFilter<Object, Object>> filters = new ArrayList<>();
 
-                try
-                {
-                    if (einnahmenCheckBox.isSelected() && !ausgabenCheckBox.isSelected())
-                    {
-                        filters.add(RowFilter.notFilter(RowFilter.regexFilter(".*", 5))); // Zeigt nur Einnahmen
-                    }
-                    else if (ausgabenCheckBox.isSelected() && !einnahmenCheckBox.isSelected())
-                    {
-                        filters.add(RowFilter.notFilter(RowFilter.regexFilter(".*", 4))); // Zeigt nur Ausgaben
+                try {
+                    if (einnahmenCheckBox.isSelected() && !ausgabenCheckBox.isSelected()) {
+                        // Zeigt nur die Zeilen an, in denen die Einnahmen-Spalte nicht leer ist
+                        filters.add(RowFilter.notFilter(RowFilter.regexFilter("^$", 4))); // Filtert Einnahmen, die nicht leer sind
+                    } else if (ausgabenCheckBox.isSelected() && !einnahmenCheckBox.isSelected()) {
+                        // Zeigt nur die Zeilen an, in denen die Ausgaben-Spalte nicht leer ist
+                        filters.add(RowFilter.notFilter(RowFilter.regexFilter("^$", 5))); // Filtert Ausgaben, die nicht leer sind
                     }
 
-                    if (!datumField.getText().trim().isEmpty())
-                    {
-                        filters.add(RowFilter.regexFilter(datumField.getText(), 2)); // Filter für das Datum
+                    if (!datumField.getText().trim().isEmpty()) {
+                        // Filter für das Datum (filtert nach einem genauen Datum oder einem Teilstring des Datums)
+                        filters.add(RowFilter.regexFilter("(?i)" + datumField.getText(), 2));
                     }
 
+                    // Kombiniert alle Filter und setzt sie auf den RowSorter
                     rowSorter.setRowFilter(filters.isEmpty() ? null : RowFilter.andFilter(filters));
-                    updateSummary(tableModel, table); // Zusammenfassung aktualisieren
-                }
-                catch (Exception ex) {
+
+                    // Aktualisiere die Zusammenfassung, basierend auf den gefilterten Ergebnissen
+                    updateSummary(tableModel, table);
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-
-                filterDialog.dispose();
             }
         });
 
